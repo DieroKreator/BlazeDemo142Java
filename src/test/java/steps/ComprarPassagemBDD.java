@@ -13,20 +13,17 @@ public class ComprarPassagemBDD {
 
     @Quando("seleciono a origem {string} e destino {string}")
     public void seleciono_a_origem_e_destino(String string, String string2) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        
     }
 
     @E("clico no botao Find Flights")
     public void clico_no_botao_find_flights() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        
     }
 
     @Entao("visualiza a lista de voos")
     public void visualiza_a_lista_de_voos() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        
     }
 
 }
