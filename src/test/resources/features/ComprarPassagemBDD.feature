@@ -17,3 +17,27 @@ Funcionalidade: Comprar Passagem
     | origem      | destino    |
     | "São Paolo" | "Cairo"    |
     | "Boston"    | "London"   |
+
+    # Quando houve um OU é melhor separar em 2 ou mais Cenario
+ #   Cenario: Cadastro Cliente
+ #       Dado que acesso a pagina de cadastro de cliente
+ #       Entao escolho entre PF OU PJ
+ #       E preencho os dados cadastrais
+ #       Quando clico em Salvar
+ #       Entao exibe a mensagem de Cadastrado com Sucesso!
+
+ #   Cenario: Cadastro Cliente PF
+ #       Dado que acesso a pagina de cadastro de cliente
+ #       Entao escolho o tipo "PF"
+ #       E preencho o Nome, CPF e data de nascimento
+ #       E preencho o telefone e o email
+ #       Quando clico em Salvar
+ #       Entao exibe a mensagem de Cadastrado com Sucesso!
+
+ #   Cenario: Cadastro Cliente PJ
+ #       Dado que entro na pagina de cadastro do cliente
+ #       Entao escolho entre "PJ"
+ #       E preencho a Razao Social, CNPJ e a data de fundacao
+ #       E preencho o telefone e o email
+ #       Quando clico em Salvar
+ #       Entao exibe a mensagem de Cadastrado com Sucesso!
