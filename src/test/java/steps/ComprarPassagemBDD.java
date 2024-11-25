@@ -44,6 +44,7 @@ public class ComprarPassagemBDD {
     }
 
     @Quando("seleciono a origem {string} e destino {string}")
+    @Quando("seleciono a {string} e {string}")
     public void seleciono_a_origem_e_destino(String origem, String destino) {
         {
             this.origem = origem;
