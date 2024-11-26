@@ -41,3 +41,38 @@ Funcionalidade: Comprar Passagem
  #       E preencho o telefone e o email
  #       Quando clico em Salvar
  #       Entao exibe a mensagem de Cadastrado com Sucesso!
+
+ ## Caminho feliz
+    Esquema do Cenario: Login Positivo
+        Dado que acesso a pagina de Login
+        Quando preencho o <email> e a <senha>
+        E clico no botao Login
+        Entao exibe a mensagem de Login com Sucesso
+        Exemplos:
+        | email                   | senha      |
+        | cliente@iterasys.com.br | Laranja25  | #1 VV 
+
+## Testes Negativos
+    Esquema do Cenario: Login Negativo
+        Dado que acesso a pagina de Login 
+        Quando preencho o <email> e a <senha>
+        E clico no botao Login
+        Entao exibe a mensagem de email ou senha incorretos
+        Exemplos:
+        | email                   | senha      |
+        | cliente@iterasys.com.br | Laranja24  | #2 VF
+        | aluno@iterasys.com.br   | Laranja25  | #3 FV
+        | aluno@iterasys.com.br   | Laranja24  | #4 FF
+
+## Todos os testes
+    Esquema do Cenario: Login
+        Dado que acesso a pagina de Login
+        Quando preencho o <email> e a <senha>
+        E clico no botao Login
+        Entao exibe a <mensagem>
+        Exemplos:
+        | email                   | senha      | tipo | mensagem                  |
+        | cliente@iterasys.com.br | Laranja25  | P    | Login com Sucesso         | #1 VV Positivo
+        | cliente@iterasys.com.br | Laranja24  | N    | email ou senha incorretos | #2 VF Negativo
+        | aluno@iterasys.com.br   | Laranja25  | N    | email ou senha incorretos | #3 FV Negativo
+        | aluno@iterasys.com.br   | Laranja24  | N    | email ou senha incorretos | #4 FF Negativo
