@@ -11,4 +11,7 @@ public class CommonPage {
     }
 
     // Funções em comun
+    public String lerNomeDaGuia(){
+        return driver.getTitle();
+    }
 }

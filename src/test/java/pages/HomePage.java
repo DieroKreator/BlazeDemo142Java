@@ -33,8 +33,4 @@ public class HomePage extends CommonPage{
     public void acessarHomePage(String url){
         driver.get(url);
     }
-
-    public String lerNomeDaGuia(){
-        return driver.getTitle();
-    }
 }
