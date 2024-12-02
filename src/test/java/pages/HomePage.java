@@ -27,6 +27,10 @@ public class HomePage extends CommonPage{
     }
 
     public void clicarBotaoFindFlights(){
-        
+        btnFindFlights.click();
+    }
+
+    public void acessarHomePage(String url){
+        driver.get(url);
     }
 }
