@@ -1,12 +1,24 @@
 package stepsPO;
 
+import org.openqa.selenium.WebDriver;
+
 import io.cucumber.java.pt.Dado;
 import io.cucumber.java.pt.E;
 import io.cucumber.java.pt.Entao;
 import io.cucumber.java.pt.Quando;
+import pages.HomePage;
+import pages.ReservePage;
 
 public class ComprarPassagemPO {
 
+    final WebDriver driver;
+    private HomePage homePage;
+    private ReservePage reservePage;
+
+    public String origem;
+    public String destino;
+
+    // As anotações Before e After ficam no Hooks.java
     @Dado("que acesso o site {string} PO")
     public void que_acesso_o_site_po(String string) {
     }
