@@ -35,15 +35,20 @@ public class ComprarPassagemPO {
     }
 
     @Quando("seleciono a {string} e {string} PO")
-    public void seleciono_a_e_po(String string, String string2) {
+    public void seleciono_a_e_po(String origem, String destino) {
+        homePage.selecionarOrigemDestino(origem, destino);
     }
 
     @E("clico no botao Find Flights PO")
     public void clico_no_botao_find_flights_po() {
+        homePage.clicarBotaoFindFlights();
+        reservePage = new ReservePage(driver);
     }
 
     @Entao("visualiza a lista de voos PO")
     public void visualiza_a_lista_de_voos_po() {
+        assertEquals("BlazeDemo - reserve", reservePage.lerNomeDaGuia());
+        assertEquals(0, 0);
     }
 
     @Quando("clico no {int} PO")
