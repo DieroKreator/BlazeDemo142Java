@@ -36,6 +36,7 @@ public class ComprarPassagemPO {
 
     @Quando("seleciono a {string} e {string} PO")
     public void seleciono_a_e_po(String origem, String destino) {
+        this.origem = origem;
         homePage.selecionarOrigemDestino(origem, destino);
     }
 
@@ -48,7 +49,8 @@ public class ComprarPassagemPO {
     @Entao("visualiza a lista de voos PO")
     public void visualiza_a_lista_de_voos_po() {
         assertEquals("BlazeDemo - reserve", reservePage.lerNomeDaGuia());
-        assertEquals(0, 0);
+        assertEquals("Flights from " + this.origem + " to " + this.destino + ":", 
+            reservePage.lerCabecalhoVoos());
     }
 
     @Quando("clico no {int} PO")
