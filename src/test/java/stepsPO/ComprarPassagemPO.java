@@ -1,7 +1,5 @@
 package stepsPO;
 
-import static org.junit.Assert.assertEquals;
-
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 
