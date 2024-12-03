@@ -20,7 +20,7 @@ public class ComprarPassagemPO {
     public String origem;
     public String destino;
 
-    public ComprarPassagemPO(Base base){
+    public ComprarPassagemPO(Base base) {
         this.driver = base.driver;
     }
 
@@ -36,7 +36,21 @@ public class ComprarPassagemPO {
     @Quando("seleciono a {string} e {string} PO")
     public void seleciono_a_e_po(String origem, String destino) {
         this.origem = origem;
+        this.destino = destino;
         homePage.selecionarOrigemDestino(origem, destino);
+
+        // Ativar a sincronização para o robô executar devagar
+        // E podermos visualizar o funcionamento
+        // Importante: É só como curiosidade ou em caso de problemas
+        // O indicado é deixar o robô executar o mais rápido possível
+
+        synchronized (driver) {
+            try {
+                driver.wait(1000);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     @E("clico no botao Find Flights PO")
@@ -50,6 +64,14 @@ public class ComprarPassagemPO {
         Assert.assertEquals("BlazeDemo - reserve", reservePage.lerNomeDaGuia());
         Assert.assertEquals("Flights from " + this.origem + " to " + this.destino + ":",
                 reservePage.lerCabecalhoVoos());
+
+        synchronized (driver) {
+            try {
+                driver.wait(1000);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     @Quando("clico no {int} PO")
