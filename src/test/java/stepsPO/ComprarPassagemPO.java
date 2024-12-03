@@ -2,6 +2,7 @@ package stepsPO;
 
 import static org.junit.Assert.assertEquals;
 
+import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 
 import io.cucumber.java.pt.Dado;
@@ -31,7 +32,7 @@ public class ComprarPassagemPO {
         homePage = new HomePage(driver);
         homePage.acessarHomePage(url);
 
-        assertEquals("BlazeDemo", homePage.lerNomeDaGuia());
+        Assert.assertEquals("BlazeDemo", homePage.lerNomeDaGuia());
     }
 
     @Quando("seleciono a {string} e {string} PO")
@@ -48,9 +49,9 @@ public class ComprarPassagemPO {
 
     @Entao("visualiza a lista de voos PO")
     public void visualiza_a_lista_de_voos_po() {
-        assertEquals("BlazeDemo - reserve", reservePage.lerNomeDaGuia());
-        assertEquals("Flights from " + this.origem + " to " + this.destino + ":", 
-            reservePage.lerCabecalhoVoos());
+        Assert.assertEquals("BlazeDemo - reserve", reservePage.lerNomeDaGuia());
+        Assert.assertEquals("Flights from " + this.origem + " to " + this.destino + ":",
+                reservePage.lerCabecalhoVoos());
     }
 
     @Quando("clico no {int} PO")

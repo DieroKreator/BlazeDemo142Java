@@ -15,7 +15,7 @@ public class HomePage extends CommonPage{
     
     public By byLocal(String local){
 
-        return By.cssSelector("optin[value=\"" + local + "\"]");
+        return By.cssSelector("option[value=\"" + local + "\"]");
     }
 
     @FindBy(css = ".btn-primary")
